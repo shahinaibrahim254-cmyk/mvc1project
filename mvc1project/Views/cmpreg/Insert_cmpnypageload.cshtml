@@ -1,0 +1,96 @@
+﻿@model mvc1project.Models.cmpinsert
+@{
+    ViewBag.Title = "Insert_cmpnypageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Company Register</h2>
+<div>
+    @using (Html.BeginForm("Insert_cmpnyclick", "cmpreg", FormMethod.Post))
+    {
+        <div>
+            <label>Name</label>
+
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+
+
+        <div>
+            <label>Address</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.address)
+            @Html.ValidationMessageFor(m => m.address)
+
+        </div>
+        <div>
+            <label>Phone:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.phone)
+            @Html.ValidationMessageFor(m => m.phone)
+        </div>
+
+        <div>
+            <label>Website:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.website)
+            @Html.ValidationMessageFor(m => m.website)
+        </div>
+
+
+
+
+        <div>
+            <label>Description:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.description)
+            @Html.ValidationMessageFor(m => m.description)
+        </div>
+
+
+        <div>
+            <label>Username:</label>
+
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+
+        </div>
+
+        <div>
+            <label>Password:</label>
+
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.pass)
+            @Html.ValidationMessageFor(m => m.pass)
+
+        </div>
+        <div>
+            <label>ConfirmPassword:</label>
+
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.cpassword)
+            @Html.ValidationMessageFor(m => m.cpassword)
+        </div>
+
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.cmpmsg)
+        </div>
+
+
+
+    }
+</div>
+
+
+

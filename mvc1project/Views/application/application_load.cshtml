@@ -1,0 +1,163 @@
+﻿@*@model mvc1project.Models.Jobcs
+    @{
+        ViewBag.Title = "application_load";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div>
+        @using (Html.BeginForm("Job_Apply_click", "application", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <h2><b>@Html.DisplayFor(m => m.title)</b></h2>
+
+
+            <div>
+                <label>Experience:</label>
+            </div>
+            <div>
+                @Html.DisplayFor(m => m.exp)
+            </div>
+            <div>
+                <label><b>Salary:</b></label>
+                <div>@Html.DisplayFor(m => m.sal)</div>
+            </div>
+            <div>
+                <label><b>Location:</b></label>
+                <div>@Html.DisplayFor(m => m.loc)</div>
+            </div>
+            <div>
+                <label><b>Last Date to Apply:</b></label>
+                <div>@Html.DisplayFor(m => m.lstdate)</div>
+            </div>
+            <div>
+                <label><b>Upload CV:</b></label>
+                <div>
+                    @Html.TextBox("file", "", new { Type = "file" })
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Apply" />
+                @Html.DisplayFor(m => m.msg)
+            </div>
+        }
+    </div>*@
+@model mvc1project.Models.Jobcs
+@{
+    ViewBag.Title = "application_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .application-container {
+        width: 60%;
+        margin: 50px auto;
+        background-color: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 120, 215, 0.1);
+        padding: 30px 40px;
+    }
+
+    h2 {
+        color: #0078d7;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-weight: 600;
+        color: #333;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .field-value {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+
+    input[type="file"] {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 8px;
+        margin-top: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+    }
+
+        input[type="file"]:hover {
+            border-color: #0078d7;
+        }
+
+    .apply-button {
+        display: inline-block;
+        background-color: #0078d7;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 25px;
+        margin-top: 25px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .apply-button:hover {
+            background-color: #ffffff;
+            color: #0078d7;
+            border: 2px solid #0078d7;
+            transform: scale(1.05);
+        }
+
+    .message {
+        color: green;
+        font-weight: 600;
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+    }
+</style>
+
+<div class="application-container">
+    @using (Html.BeginForm("Job_Apply_click", "application", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <h2>@Html.DisplayFor(m => m.title)</h2>
+
+        <label>Experience:</label>
+        <div class="field-value">@Html.DisplayFor(m => m.exp)</div>
+
+        <label>Salary:</label>
+        <div class="field-value">@Html.DisplayFor(m => m.sal)</div>
+
+        <label>Location:</label>
+        <div class="field-value">@Html.DisplayFor(m => m.loc)</div>
+
+        <label>Last Date to Apply:</label>
+        <div class="field-value">@Html.DisplayFor(m => m.lstdate)</div>
+
+        <label>Upload CV:</label>
+        <div>
+            @Html.TextBox("file", "", new { Type = "file" })
+        </div>
+
+        <div style="text-align:center;">
+            <input type="submit" value="Apply" class="apply-button" />
+        </div>
+
+        <div class="message">@Html.DisplayFor(m => m.msg)</div>
+    }
+</div>
+

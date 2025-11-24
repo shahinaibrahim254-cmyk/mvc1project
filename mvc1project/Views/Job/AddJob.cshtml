@@ -1,0 +1,122 @@
+﻿@*@model mvc1project.Models.Jobcs
+@{
+    ViewBag.Title = "AddJob";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Job</h2>*@
+
+@*@using (Html.BeginForm("AddJob", "Job", FormMethod.Post))
+    {
+        <div>
+            <label>Skill:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.sk)
+        </div>
+
+        <div>
+            <label>Location:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.loc)
+        </div>
+
+        <div>
+            <label>Salary:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.sal)
+        </div>
+
+        <div>
+            <label>Experience:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.exp)
+        </div>
+
+        <div>
+            <label>Status:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.jbstatus)
+        </div>
+
+        <div>
+            <label>Last Date:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.lstdate)
+        </div>
+
+        <br />
+        <div><input type="submit" value="Add Job" class="btn btn-primary" /></div>
+    }
+
+    <p style="color:green;">@ViewBag.Message</p>*@
+
+@model mvc1project.Models.Jobcs
+@{
+    ViewBag.Title = "AddJob";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Job</h2>
+
+@using (Html.BeginForm("AddJob", "Job", FormMethod.Post))
+{
+    <div>
+        <label>Title:</label>  <!-- Add this label -->
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.title)  <!-- Add this input for the title -->
+    </div>
+
+    <div>
+        <label>Skill:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.sk)
+    </div>
+
+    <div>
+        <label>Location:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.loc)
+    </div>
+
+    <div>
+        <label>Salary:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.sal)
+    </div>
+
+    <div>
+        <label>Experience:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.exp)
+    </div>
+
+    <div>
+        <label>Status:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.jbstatus)
+    </div>
+
+    <div>
+        <label>Last Date:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.lstdate, new { type = "date" })  <!-- Improved for date picker -->
+    </div>
+
+    <br />
+    <div><input type="submit" value="Add Job" class="btn btn-primary" /></div>
+}
+
+<p style="color:green;">@ViewBag.Message</p>
